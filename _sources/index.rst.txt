@@ -1,0 +1,16 @@
+Welcome to the Data Science Library's documentation!
+====================================================
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+   
+.. automodule:: mypackage.data_lib
+	:members:
+		
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`

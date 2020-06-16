@@ -1,0 +1,745 @@
+
+<!DOCTYPE html>
+
+<html lang="Python">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to the Data Science Library&#39;s documentation! &#8212; Library for Data Science  documentation</title>
+    <link rel="stylesheet" href="_static/agogo.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
+    <div class="header-wrapper" role="banner">
+      <div class="header">
+        <div class="headertitle"><a
+          href="#">Library for Data Science  documentation</a></div>
+        <div class="rel" role="navigation" aria-label="related navigation">
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a>
+        </div>
+       </div>
+    </div>
+
+    <div class="content-wrapper">
+      <div class="content">
+        <div class="document">
+            
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="welcome-to-the-data-science-library-s-documentation">
+<h1>Welcome to the Data Science Library's documentation!<a class="headerlink" href="#welcome-to-the-data-science-library-s-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<span class="target" id="module-mypackage.data_lib"></span><dl class="py function">
+<dt id="mypackage.data_lib.analyse_target">
+<code class="sig-prename descclassname">mypackage.data_lib.</code><code class="sig-name descname">analyse_target</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em>, <em class="sig-param"><span class="n">target</span></em>, <em class="sig-param"><span class="n">normalized</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mypackage.data_lib.analyse_target" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Compares the number (or percentage) of each value taken by the feature</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> -- Dataframe used</p></li>
+<li><p><strong>target</strong> -- The feature analyzed</p></li>
+<li><p><strong>normalized</strong> -- True: Give the proportion of each value taken by the feature</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The number/proportion of each value taken by the feature (ex :</p>
+</dd>
+</dl>
+<p>negative    1
+positive    9</p>
+<p>or</p>
+<p>negative    0.1
+positive    0.9</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mypackage.data_lib.build_feature_importance">
+<code class="sig-prename descclassname">mypackage.data_lib.</code><code class="sig-name descname">build_feature_importance</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">model</span></em>, <em class="sig-param"><span class="n">X_train</span></em>, <em class="sig-param"><span class="n">y_train</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mypackage.data_lib.build_feature_importance" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Build a graph with the importance of the features</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model</strong> -- model tested</p></li>
+<li><p><strong>X_train</strong> -- Train dataset feature</p></li>
+<li><p><strong>y_train</strong> -- Result of the train dataset</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mypackage.data_lib.checkNan">
+<code class="sig-prename descclassname">mypackage.data_lib.</code><code class="sig-name descname">checkNan</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mypackage.data_lib.checkNan" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Detect missing values.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>df</strong> -- Dataframe used</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Return a boolean same-sized object indicating if the values are NA. NA values, such as None or numpy.NaN,
+gets mapped to True values. Everything else gets mapped to False values
+Characters such as empty strings '' or numpy.inf are not considered NA values</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mypackage.data_lib.check_correlation">
+<code class="sig-prename descclassname">mypackage.data_lib.</code><code class="sig-name descname">check_correlation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em>, <em class="sig-param"><span class="n">value_for_correlation</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mypackage.data_lib.check_correlation" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Check if the features are correlated
+check_correlation(df, value_for_correlation)</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> -- Dataframe used</p></li>
+<li><p><strong>value_for_correlation</strong> -- Specified the value with which every other parameter would be correlated checked</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The values corresponding to the correation between value_for_correlation and every other parameters</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mypackage.data_lib.constructHeatMap">
+<code class="sig-prename descclassname">mypackage.data_lib.</code><code class="sig-name descname">constructHeatMap</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">show</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mypackage.data_lib.constructHeatMap" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Build a heatmap of the variables</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> -- Variables that will build the heatmap</p></li>
+<li><p><strong>show</strong> -- Display the plot (Default: False)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mypackage.data_lib.count_histogram">
+<code class="sig-prename descclassname">mypackage.data_lib.</code><code class="sig-name descname">count_histogram</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em>, <em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">hue</span></em>, <em class="sig-param"><span class="n">show</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mypackage.data_lib.count_histogram" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Shows the counts of observations in each categorical bin using bars</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>show</strong> -- True to display the plot</p></li>
+<li><p><strong>df</strong> -- Dataframe used</p></li>
+<li><p><strong>x</strong> -- abscisse</p></li>
+</ul>
+</dd>
+</dl>
+<p>:param hue:Legend title</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mypackage.data_lib.crossTable">
+<code class="sig-prename descclassname">mypackage.data_lib.</code><code class="sig-name descname">crossTable</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em>, <em class="sig-param"><span class="n">cross1</span></em>, <em class="sig-param"><span class="n">cross2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mypackage.data_lib.crossTable" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Compute a simple cross tabulation of two (or more) factors</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> -- Dataframe used</p></li>
+<li><p><strong>cross1</strong> -- First variable to cross with</p></li>
+<li><p><strong>cross2</strong> -- Second variable to cross with</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Cross tabulation of the data</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mypackage.data_lib.crossTables">
+<code class="sig-prename descclassname">mypackage.data_lib.</code><code class="sig-name descname">crossTables</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em>, <em class="sig-param"><span class="n">column_name</span></em>, <em class="sig-param"><span class="n">cross</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mypackage.data_lib.crossTables" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Compute a cross tab for every value of the column with a parameter</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> -- Dataframe used</p></li>
+<li><p><strong>column_name</strong> -- The column where the values are taken from</p></li>
+<li><p><strong>cross</strong> -- The parameter which the one the values are crossed with</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mypackage.data_lib.description_object">
+<code class="sig-prename descclassname">mypackage.data_lib.</code><code class="sig-name descname">description_object</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em>, <em class="sig-param"><span class="n">target</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mypackage.data_lib.description_object" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Function used on a variable of interest to get the unique values of the column
+For example, let us say we want to find the unique values of column 'continent'
+in a data frame. This would result in all continents in the dataframe.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> -- Dataframe used</p></li>
+<li><p><strong>target</strong> -- Target we want to find unique()</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>numpy.ndarray or ExtensionArray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mypackage.data_lib.displayHead">
+<code class="sig-prename descclassname">mypackage.data_lib.</code><code class="sig-name descname">displayHead</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em>, <em class="sig-param"><span class="n">nb_column</span></em>, <em class="sig-param"><span class="n">every_column</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">every_row</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mypackage.data_lib.displayHead" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Display the head of the dataframe df - 5 rows by default
+Using the boolean for every_column and every_row, it's possible to display more</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nb_column</strong> -- Number of column to visualize</p></li>
+<li><p><strong>df</strong> -- Dataframe used</p></li>
+<li><p><strong>every_column</strong> -- Default is False, if True every column is displayed</p></li>
+<li><p><strong>every_row</strong> -- Default is False, if True every row is displayed</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Head of the dataframe</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mypackage.data_lib.display_relations">
+<code class="sig-prename descclassname">mypackage.data_lib.</code><code class="sig-name descname">display_relations</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">column_name</span></em>, <em class="sig-param"><span class="n">relation</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mypackage.data_lib.display_relations" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Display the relation between diff
+display_relations(blood_columns, relation)
+Ex : relation = [(positive_df, 'positive'), (negative_df, 'negative')] shows the relation between the
+blood_column and the positive and negative results</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>column_name</strong> -- Column the relation are being tested with</p></li>
+<li><p><strong>relation</strong> -- List of relation to observe</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mypackage.data_lib.draw_histograms">
+<code class="sig-prename descclassname">mypackage.data_lib.</code><code class="sig-name descname">draw_histograms</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em>, <em class="sig-param"><span class="n">data_type</span><span class="o">=</span><span class="default_value">'float'</span></em>, <em class="sig-param"><span class="n">nb_columns</span><span class="o">=</span><span class="default_value">4</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mypackage.data_lib.draw_histograms" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Draw the histograms/plot pie of the quantitatives/qualitatives variables</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> -- Dataframe used</p></li>
+<li><p><strong>data_type</strong> -- type of the data : int, int64, float, float64 or object</p></li>
+<li><p><strong>nb_columns</strong> -- Number of column for the subplot created to display the plots</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mypackage.data_lib.dropColumn">
+<code class="sig-prename descclassname">mypackage.data_lib.</code><code class="sig-name descname">dropColumn</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em>, <em class="sig-param"><span class="n">columnName</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mypackage.data_lib.dropColumn" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Remove a column</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> -- Dataframe used</p></li>
+<li><p><strong>columnName</strong> -- Name of the column to remove</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dataframe without the column droped</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mypackage.data_lib.encoding">
+<code class="sig-prename descclassname">mypackage.data_lib.</code><code class="sig-name descname">encoding</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em>, <em class="sig-param"><span class="n">type_values</span></em>, <em class="sig-param"><span class="n">swap_these_values</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mypackage.data_lib.encoding" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Encode qualitatives values</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> -- Dataframe used</p></li>
+<li><p><strong>type_values</strong> -- Type of the value worked with</p></li>
+<li><p><strong>swap_these_values</strong> -- Swap the values {&quot;Value 0&quot;: 0, &quot;Value1&quot;: 1, ...}</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dataframe with the qualitatives values swaped to quantitatives values</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mypackage.data_lib.evaluation">
+<code class="sig-prename descclassname">mypackage.data_lib.</code><code class="sig-name descname">evaluation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">model</span></em>, <em class="sig-param"><span class="n">X_train</span></em>, <em class="sig-param"><span class="n">y_train</span></em>, <em class="sig-param"><span class="n">X_test</span></em>, <em class="sig-param"><span class="n">y_test</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mypackage.data_lib.evaluation" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Evaluation of the model, compare on the same plot the prediction on the trainset and the testset
+Display the confusion matrix and classification report
+Shows the overfitting/undefitting</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model</strong> -- model used</p></li>
+<li><p><strong>X_train</strong> -- X trainset</p></li>
+<li><p><strong>y_train</strong> -- y trainset</p></li>
+<li><p><strong>X_test</strong> -- X testset</p></li>
+<li><p><strong>y_test</strong> -- y testset</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mypackage.data_lib.feature_engineering">
+<code class="sig-prename descclassname">mypackage.data_lib.</code><code class="sig-name descname">feature_engineering</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em>, <em class="sig-param"><span class="n">column</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mypackage.data_lib.feature_engineering" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Feature engineering on column</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> -- Dataframe used</p></li>
+<li><p><strong>column</strong> -- Column targeted with the feature engineering</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dataframe fetaure engineered</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mypackage.data_lib.general_info">
+<code class="sig-prename descclassname">mypackage.data_lib.</code><code class="sig-name descname">general_info</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em>, <em class="sig-param"><span class="n">nb_column</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mypackage.data_lib.general_info" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Display quickly some inforrmation to get started with the analysis of a dataframe</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>df</strong> -- Dataframe used</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mypackage.data_lib.imputation">
+<code class="sig-prename descclassname">mypackage.data_lib.</code><code class="sig-name descname">imputation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mypackage.data_lib.imputation" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Imputation function</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>df</strong> -- Dataframe used</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The dataframe with the imputation applied</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mypackage.data_lib.keep_values">
+<code class="sig-prename descclassname">mypackage.data_lib.</code><code class="sig-name descname">keep_values</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em>, <em class="sig-param"><span class="n">percentage_to_keep</span><span class="o">=</span><span class="default_value">0.9</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mypackage.data_lib.keep_values" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Keeps the values where there are less than a certain percentage of missing values</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> -- Dataframe used</p></li>
+<li><p><strong>percentage_to_keep</strong> -- Percentage to conserve</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A new dataframe where the variables with more than percentage_to_keep are conserved</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mypackage.data_lib.load_dataset">
+<code class="sig-prename descclassname">mypackage.data_lib.</code><code class="sig-name descname">load_dataset</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataset_path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mypackage.data_lib.load_dataset" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Load the dataset and work on a copy</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>dataset_path</strong> -- Global variable to define the path where the dataset is located</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Return the copy of the dataset loaded</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mypackage.data_lib.missing_rate">
+<code class="sig-prename descclassname">mypackage.data_lib.</code><code class="sig-name descname">missing_rate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mypackage.data_lib.missing_rate" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Get for each column (feature) the percentage of missing value</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>df</strong> -- Dataframe used</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Percentage of missing value</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mypackage.data_lib.missing_values_percentage">
+<code class="sig-prename descclassname">mypackage.data_lib.</code><code class="sig-name descname">missing_values_percentage</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em>, <em class="sig-param"><span class="n">rate_checked</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mypackage.data_lib.missing_values_percentage" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Print out the percentage of the missing values, compared to the rate checked</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rate_checked</strong> -- How many values are missing compared to this rate</p></li>
+<li><p><strong>df</strong> -- Dataframe used</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The global percentage of missing values in the dataset</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mypackage.data_lib.model_final">
+<code class="sig-prename descclassname">mypackage.data_lib.</code><code class="sig-name descname">model_final</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">model</span></em>, <em class="sig-param"><span class="n">X</span></em>, <em class="sig-param"><span class="n">threshold</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mypackage.data_lib.model_final" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Classification problem : Determine the decision threshold</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model</strong> -- model tested</p></li>
+<li><p><strong>X</strong> -- Feature dataset</p></li>
+<li><p><strong>threshold</strong> -- Decision threshold</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if above the decision threshold, False otherwise</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mypackage.data_lib.pairwise_relationships">
+<code class="sig-prename descclassname">mypackage.data_lib.</code><code class="sig-name descname">pairwise_relationships</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em>, <em class="sig-param"><span class="n">variable</span></em>, <em class="sig-param"><span class="n">cluster</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mypackage.data_lib.pairwise_relationships" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Display a pairplot, clustermap or heatmap</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> -- Dataframe used</p></li>
+<li><p><strong>variable</strong> -- Variable studied</p></li>
+<li><p><strong>cluster</strong> -- True: Clustermap display, False: Heatmap displayed</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mypackage.data_lib.precision_recall">
+<code class="sig-prename descclassname">mypackage.data_lib.</code><code class="sig-name descname">precision_recall</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">X_test</span></em>, <em class="sig-param"><span class="n">y_test</span></em>, <em class="sig-param"><span class="n">gs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mypackage.data_lib.precision_recall" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Plot the precision and recall curves on the same graph</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X_test</strong> -- Test dataset</p></li>
+<li><p><strong>y_test</strong> -- Target dataset</p></li>
+<li><p><strong>gs</strong> -- model with hyperparameters improved</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mypackage.data_lib.preprocessing">
+<code class="sig-prename descclassname">mypackage.data_lib.</code><code class="sig-name descname">preprocessing</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em>, <em class="sig-param"><span class="n">Target</span></em>, <em class="sig-param"><span class="n">type_values</span></em>, <em class="sig-param"><span class="n">swap_these_values</span></em>, <em class="sig-param"><span class="n">new_feature</span></em>, <em class="sig-param"><span class="n">column</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mypackage.data_lib.preprocessing" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Global preprocessing function</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> -- Dataframe used</p></li>
+<li><p><strong>Target</strong> -- Target variable wanted predicted</p></li>
+<li><p><strong>type_values</strong> -- Type of the values</p></li>
+<li><p><strong>swap_these_values</strong> -- Values swaped</p></li>
+<li><p><strong>new_feature</strong> -- New_feature used for the feature engineering</p></li>
+<li><p><strong>column</strong> -- Column concerned by the feature engineering</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>X: Features and y: Target to predict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mypackage.data_lib.qual_to_quan">
+<code class="sig-prename descclassname">mypackage.data_lib.</code><code class="sig-name descname">qual_to_quan</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em>, <em class="sig-param"><span class="n">target</span></em>, <em class="sig-param"><span class="n">criteria</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mypackage.data_lib.qual_to_quan" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Creates a subset (or collection) of the target with a certain criteria
+Ex: positive_df = qual_to_quan(df, &quot;SARS-Cov-2 exam result&quot;, 'positive') creates a subset of the positive results
+to the Covid19 exam</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> -- Dataframe used</p></li>
+<li><p><strong>target</strong> -- Target we want to create a subset from</p></li>
+<li><p><strong>criteria</strong> -- Criteria used to create a subset</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dataframe responding to the criteria chosed</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mypackage.data_lib.rate_borned">
+<code class="sig-prename descclassname">mypackage.data_lib.</code><code class="sig-name descname">rate_borned</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em>, <em class="sig-param"><span class="n">missing_rate</span></em>, <em class="sig-param"><span class="n">rate_inf</span></em>, <em class="sig-param"><span class="n">rate_sup</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mypackage.data_lib.rate_borned" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Creates a subset based on the missing rates
+Ex:
+blood_columns = rate_borned(df, MR, 0.88, 0.9) create column where the missing rate MR is included between
+0.88 and 0.9</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> -- Dataframe used</p></li>
+<li><p><strong>missing_rate</strong> -- missing_rate to compare the rates</p></li>
+<li><p><strong>rate_inf</strong> -- Decision rate inf</p></li>
+<li><p><strong>rate_sup</strong> -- Decision rate sups</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The column labels of the DataFrame corresponding to the criteria missing rate, rate inf and sup</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mypackage.data_lib.relation_in_newcol">
+<code class="sig-prename descclassname">mypackage.data_lib.</code><code class="sig-name descname">relation_in_newcol</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em>, <em class="sig-param"><span class="n">column</span></em>, <em class="sig-param"><span class="n">newcol</span></em>, <em class="sig-param"><span class="n">show</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mypackage.data_lib.relation_in_newcol" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Display the relation between a specified column and another one</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>show</strong> -- True: Display the plot(s)</p></li>
+<li><p><strong>df</strong> -- Dataframe used</p></li>
+<li><p><strong>column</strong> -- First column</p></li>
+<li><p><strong>newcol</strong> -- Second column</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mypackage.data_lib.shapeOfDF">
+<code class="sig-prename descclassname">mypackage.data_lib.</code><code class="sig-name descname">shapeOfDF</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mypackage.data_lib.shapeOfDF" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Give the shape of the dataframe</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>df</strong> -- Dataframe used</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(row_number, column_number)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mypackage.data_lib.student_test">
+<code class="sig-prename descclassname">mypackage.data_lib.</code><code class="sig-name descname">student_test</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">column</span></em>, <em class="sig-param"><span class="n">a</span></em>, <em class="sig-param"><span class="n">b</span></em>, <em class="sig-param"><span class="n">alpha</span><span class="o">=</span><span class="default_value">0.02</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mypackage.data_lib.student_test" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Print for each column, the result of the Student's test</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>column</strong> -- Column</p></li>
+<li><p><strong>t_test</strong> -- Student test</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mypackage.data_lib.t_test">
+<code class="sig-prename descclassname">mypackage.data_lib.</code><code class="sig-name descname">t_test</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">col</span></em>, <em class="sig-param"><span class="n">a</span></em>, <em class="sig-param"><span class="n">b</span></em>, <em class="sig-param"><span class="n">alpha</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mypackage.data_lib.t_test" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Calculates the T-test for the means of two independent samples of scores
+This is a two-sided test for the null hypothesis that 2 independent samples have identical average (expected) values
+This test assumes that the populations have identical variances by default</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>col</strong> -- Column concerned</p></li>
+<li><p><strong>alpha</strong> -- Statistic parameter</p></li>
+<li><p><strong>a</strong> -- Subset A</p></li>
+<li><p><strong>b</strong> -- Subset B</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>String</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mypackage.data_lib.typeOfDFValues">
+<code class="sig-prename descclassname">mypackage.data_lib.</code><code class="sig-name descname">typeOfDFValues</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mypackage.data_lib.typeOfDFValues" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Print the types of the values contained in the dataframe</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>df</strong> -- Dataframe used</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Return a Series containing counts of unique values</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mypackage.data_lib.view_regression">
+<code class="sig-prename descclassname">mypackage.data_lib.</code><code class="sig-name descname">view_regression</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em>, <em class="sig-param"><span class="n">column_name</span></em>, <em class="sig-param"><span class="n">absc</span></em>, <em class="sig-param"><span class="n">discrimination</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mypackage.data_lib.view_regression" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Plot data and regression model fits across a FacetGrid
+Ex:
+view_regression(df, blood_columns, &quot;Patient age quantile&quot;, &quot;SARS-Cov-2 exam result&quot;)</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> -- Dataframe used</p></li>
+<li><p><strong>column_name</strong> -- Columns</p></li>
+<li><p><strong>absc</strong> -- Abscisse</p></li>
+<li><p><strong>discrimination</strong> -- Discrimination parameter</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+        </div>
+        <div class="sidebar">
+          
+          <h3>Table of Contents</h3>
+          
+          <div role="search">
+            <h3 style="margin-top: 1.5em;">Search</h3>
+            <form class="search" action="search.html" method="get">
+                <input type="text" name="q" />
+                <input type="submit" value="Go" />
+            </form>
+          </div>
+
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
+
+    <div class="footer-wrapper">
+      <div class="footer">
+        <div class="left">
+          <div role="navigation" aria-label="related navigaton">
+            <a href="py-modindex.html" title="Python Module Index"
+              >modules</a> |
+            <a href="genindex.html" title="General Index"
+              >index</a>
+          </div>
+          <div role="note" aria-label="source link">
+              <br/>
+              <a href="_sources/index.rst.txt"
+                rel="nofollow">Show Source</a>
+          </div>
+        </div>
+
+        <div class="right">
+          
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Quentin Ackermann.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.1.1.
+    </div>
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
+
+  </body>
+</html>
